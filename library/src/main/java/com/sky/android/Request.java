@@ -129,7 +129,8 @@ public abstract class Request {
         try {
             conn = getHttpURLConnection();
             // Connect to the server
-            conn.connect();
+            // here don't need explicit invoke.
+//            conn.connect();
 
             // write post data
             if (TextUtils.equals(mRequestMethod, METHOD_POST)) {
@@ -183,9 +184,10 @@ public abstract class Request {
                 e.printStackTrace();
             }
 
-            if (conn != null) {
-                conn.disconnect();
-            }
+            // here don't need explicit invoke.
+//            if (conn != null) {
+//                conn.disconnect();
+//            }
         }
         return statusCode;
     }
